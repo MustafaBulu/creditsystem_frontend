@@ -27,15 +27,9 @@ class CreateUserComponent extends Component {
         let user = {identificationNumber: this.state.identificationNumber, firstName_lastName: this.state.firstName_lastName, monthlyIncome: this.state.monthlyIncome, phoneNumber: this.state.phoneNumber};
         console.log('user => ' + JSON.stringify(user));
 
-    
-
-    
         // step 3
-
             UserService.createUser(user).then(res =>{
-                this.props.history.push('/kredibasvurusu');
-                
-                
+                this.props.history.push('/kredibasvurusu');  
             });
     }
     
