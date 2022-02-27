@@ -35,7 +35,7 @@ class CreateUserComponent extends Component {
         // step 5
 
             UserService.createUser(user).then(res =>{
-                this.props.history.push('/krediler/basvur');
+                this.props.history.push('/kredibasvurusu');
                 
                 
             });
