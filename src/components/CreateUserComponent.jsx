@@ -21,18 +21,16 @@ class CreateUserComponent extends Component {
         this.saveUser = this.saveUser.bind(this);
     }
 
-    // step 3
-    componentDidMount(){
-
-           
-    }
+    
     saveUser = (e) => {
         e.preventDefault();
         let user = {identificationNumber: this.state.identificationNumber, firstName_lastName: this.state.firstName_lastName, monthlyIncome: this.state.monthlyIncome, phoneNumber: this.state.phoneNumber};
         console.log('user => ' + JSON.stringify(user));
 
     
-        // step 5
+
+    
+        // step 3
 
             UserService.createUser(user).then(res =>{
                 this.props.history.push('/kredibasvurusu');
@@ -87,11 +85,12 @@ class CreateUserComponent extends Component {
                                             <input type="number" placeholder="Telefon Numaranızı girin" name="phoneNumber" className="form-control" 
                                                 value={this.state.phoneNumber} onChange={this.changephoneNumberHandler}/>
                                         </div>
-
                                         <button className="btn btn-success" onClick={this.saveUser}>Kredi Başvurusu Yap</button>
                                     </form>
-                                    <p>{this.changeidentificationNumberHandler}</p>
+                                    
+                                    
                                 </div>
+                                <h6>Kredi başvurusu yaptıktan sonra sms ile bilgilendirileceksiniz</h6>
                             </div>
                         </div>
 
